@@ -1,0 +1,31 @@
+/.metadata/
+
+# Java/Spring/IDE
+target/
+bin/
+build/
+out/
+!.mvn/wrapper/maven-wrapper.jar
+.classpath
+.project
+.settings/
+.vscode/
+.idea/
+*.iml
+
+# Logs & OS
+logs/
+*.log
+.DS_Store
+Thumbs.db
+
+# Node (프론트 포함 시)
+node_modules/
+.next/
+dist/
+
+# Local env
+.env
+.env.*
+application-local.*
+application-*.local.*
