@@ -1,4 +1,6 @@
 package edu.pnu.domain;
+import java.time.LocalDateTime;
+
 //
 import org.hibernate.annotations.DynamicInsert;
 
@@ -42,8 +44,8 @@ public class User {
     private Boolean isActive;
 
     @Column(name="created_dt", updatable=false, insertable=false)
-    private java.time.LocalDateTime createdDt;
+    private LocalDateTime createdDt;
 
     @Column(name="updated_dt", insertable=false, updatable=false)
-    private java.time.LocalDateTime updatedDt;
+    private LocalDateTime updatedDt;
 }

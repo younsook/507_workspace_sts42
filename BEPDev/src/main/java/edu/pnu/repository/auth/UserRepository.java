@@ -1,4 +1,4 @@
-package edu.pnu.persistence;
+package edu.pnu.repository.auth;
 
 import java.util.Optional;
 

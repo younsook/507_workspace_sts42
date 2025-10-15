@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import edu.pnu.domain.User;
-import edu.pnu.persistence.UserRepository;
+import edu.pnu.repository.auth.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

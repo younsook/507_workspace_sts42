@@ -1,4 +1,4 @@
-package edu.pnu.persistence.board;
+package edu.pnu.repository.board;
 
 import java.util.Optional;
 

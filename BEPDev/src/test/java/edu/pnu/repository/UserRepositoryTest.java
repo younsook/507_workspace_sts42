@@ -1,6 +1,6 @@
 package edu.pnu.repository;
 import edu.pnu.domain.User;
-import edu.pnu.persistence.UserRepository;
+import edu.pnu.repository.auth.UserRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

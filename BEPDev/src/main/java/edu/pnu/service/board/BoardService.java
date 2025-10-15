@@ -13,8 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.pnu.domain.Board;
 import edu.pnu.domain.User;
-import edu.pnu.persistence.UserRepository;
-import edu.pnu.persistence.board.BoardRepository;
+import edu.pnu.repository.auth.UserRepository;
+import edu.pnu.repository.board.BoardRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

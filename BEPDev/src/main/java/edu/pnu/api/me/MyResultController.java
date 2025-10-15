@@ -1,4 +1,4 @@
-package edu.pnu.controller.me;
+package edu.pnu.api.me;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;

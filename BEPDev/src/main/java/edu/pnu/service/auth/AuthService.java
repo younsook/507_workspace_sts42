@@ -1,4 +1,4 @@
-package edu.pnu.service;
+package edu.pnu.service.auth;
 
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import edu.pnu.domain.User;
 import edu.pnu.dto.auth.RegisterRequest;
-import edu.pnu.persistence.UserRepository;
+import edu.pnu.repository.auth.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 

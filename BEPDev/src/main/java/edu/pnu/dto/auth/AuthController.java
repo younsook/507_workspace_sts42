@@ -1,4 +1,4 @@
-package edu.pnu.controller;
+package edu.pnu.dto.auth;
 
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,11 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.pnu.dto.auth.LoginRequest;
-import edu.pnu.dto.auth.RegisterRequest;
-import edu.pnu.dto.auth.RegisterResponse;
 import edu.pnu.dto.common.ApiError;
-import edu.pnu.service.AuthService;
+import edu.pnu.service.auth.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;

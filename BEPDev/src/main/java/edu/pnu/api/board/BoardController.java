@@ -1,4 +1,4 @@
-package edu.pnu.controller;
+package edu.pnu.api.board;
 
 import java.util.List;
 import java.util.Map;
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/v1/boards")
 @RequiredArgsConstructor
-public class BoardRestController {
+public class BoardController {
 	private final BoardService boardService;
 
     // 목록 (GET 공개)

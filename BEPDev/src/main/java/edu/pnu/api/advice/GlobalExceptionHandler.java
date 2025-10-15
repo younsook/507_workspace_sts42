@@ -1,4 +1,4 @@
-package edu.pnu.web;
+package edu.pnu.api.advice;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;

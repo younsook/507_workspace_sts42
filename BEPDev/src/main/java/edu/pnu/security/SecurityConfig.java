@@ -1,4 +1,4 @@
-package edu.pnu.config;
+package edu.pnu.security;
 
 import java.util.List;
 
@@ -35,14 +35,19 @@ public class SecurityConfig {
 	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 	        // 1) CORS: Next.js 개발 서버(예: http://localhost:3000) 허용
-	        http.cors(cors -> cors.configurationSource(req -> {
-	            CorsConfiguration cfg = new CorsConfiguration();
-	            cfg.setAllowedOrigins(List.of("http://localhost:3000"));
-	            cfg.setAllowedMethods(List.of("GET","POST","PUT","PATCH","DELETE","OPTIONS"));
-	            cfg.setAllowedHeaders(List.of("Content-Type", "X-XSRF-TOKEN", "Authorization"));
-	            cfg.setAllowCredentials(true); // 세션 쿠키 허용
-	            return cfg;
-	        }));
+	 		http.cors(cors -> cors.configurationSource(req -> {
+	 		   CorsConfiguration cfg = new CorsConfiguration();
+	 		   cfg.setAllowedOrigins(List.of("http://localhost:3000"));
+	 		   cfg.setAllowedOrigins(List.of(
+	 		       "http://10.125.121.222:3000",   // 🔴 실제 프론트 주소
+	 		       "http://localhost:3000"         // (필요시 개발 로컬도 허용)
+	 		   ));
+	 		   cfg.setAllowedMethods(List.of("GET","POST","PUT","PATCH","DELETE","OPTIONS"));
+	 		   cfg.setAllowedHeaders(List.of("Content-Type", "X-XSRF-TOKEN", "Authorization"));
+	 		   cfg.setAllowedHeaders(List.of("*"));           // 🔴 프리플라이트에서 어떤 헤더가 와도 허용
+	 		   cfg.setAllowCredentials(true); // 세션 쿠키 허용
+	 		    return cfg;
+	 		}));
 
 	        // 2) CSRF: 개발 단계에선 끄고 시작 (운영 전환 시 CookieCsrfTokenRepository 사용 권장)
 	        http.csrf(csrf -> csrf.disable());
@@ -54,7 +59,10 @@ public class SecurityConfig {
 	        	    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // CORS preflight 허용(선택)
 
 	        	    // 인증/회원가입은 공개
-	        	    .requestMatchers("/api/v1/auth/**").permitAll()
+	        	    .requestMatchers(
+	        	    		"/api/v1/auth/**",
+	        	    		"/api/v1/rawdata/**"
+	        	    ).permitAll()
 
 	        	    // ★ 마이페이지(me)는 전부 인증 필요
 	        	    .requestMatchers("/api/v1/me/**").authenticated()
