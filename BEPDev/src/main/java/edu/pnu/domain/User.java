@@ -33,6 +33,7 @@ public class User {
     private Long userId;
 
     private String username;
+    @Column(name="email", nullable=false, unique=true)
     private String email;
 
     @Column(name="password_hash")
